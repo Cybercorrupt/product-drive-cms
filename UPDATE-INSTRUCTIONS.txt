@@ -1,0 +1,31 @@
+PRODUCT DRIVE CMS — UPDATE INSTRUCTIONS
+
+1. Backup your current project and database first.
+2. Extract this ZIP over the current project.
+3. KEEP your existing .env file. Do not replace it with .env.example.
+4. KEEP your existing storage/products files if you have uploads you want to preserve.
+5. Run:
+   composer install
+6. Refresh the browser with Ctrl+F5.
+7. Open Settings → WhatsApp Cloud API and fill the WhatsApp fields.
+8. For local testing, expose the project through an HTTPS tunnel.
+9. Configure Meta Webhooks using the generated public callback URL.
+
+This build fixes:
+- WhatsApp webhook duplicate processing when Meta retries a slow request
+- Fail-closed message deduplication: the bot will not process a message if the dedupe table cannot be used
+- Immediate webhook acknowledgement after message validation/claim so multi-photo sends do not keep Meta waiting
+- Photo sending remains strictly opt-in: only an explicit `foto/photos/photo KODE` command can start a photo send
+- nested <script> syntax error in Products page
+- default checked/select-all UI in Products, WhatsApp Bot and Activity Log
+- select-all state/indeterminate state
+- bulk delete button state
+- empty states for WhatsApp Bot and Activity Log
+- WhatsApp configuration UI in Settings
+- webhook signature validation with Meta App Secret
+- WhatsApp STOP command
+- WhatsApp upload filenames using PRODUCTCODE_001.ext numbering
+- anti-overwrite checks for local/database/Google Drive files
+- Graph API version configuration
+
+See docs/WHATSAPP-TUTORIAL.md for the complete Meta/Cloudflare setup.

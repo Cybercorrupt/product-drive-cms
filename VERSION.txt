@@ -1,0 +1,11 @@
+V20.0 — Full Consolidated Build
+
+Includes all updates through WhatsApp Bot Reliability V20:
+- Premium SaaS UI and dashboard layout
+- Admin/User access model
+- Product/Category/Media/User management
+- Google Drive integration and accurate sync status
+- WhatsApp greeting, photo/video limits, upload sessions
+- App Secret fail-closed verification
+- Atomic message idempotency
+- WhatsApp API retry and detailed API audit logging

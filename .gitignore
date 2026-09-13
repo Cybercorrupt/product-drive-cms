@@ -1,0 +1,7 @@
+.env
+/vendor/
+storage/google-oauth.log
+storage/tmp/*
+!storage/tmp/.gitkeep
+storage/products/*
+!storage/products/.gitkeep

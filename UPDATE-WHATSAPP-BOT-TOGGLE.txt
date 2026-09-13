@@ -1,0 +1,28 @@
+PRODUCT DRIVE CMS - UPDATE: WHATSAPP BOT ON/OFF
+
+Perubahan:
+- Menambahkan panel WhatsApp Bot ON/OFF di Settings -> WhatsApp.
+- Status disimpan di database tabel app_settings, bukan .env.
+- Default setelah update: ON.
+- Saat OFF, webhook Meta tetap aktif dan membalas HTTP 200 agar Meta tidak menganggap webhook gagal.
+- Pesan masuk saat bot OFF dicatat sebagai action=bot_disabled, status=ignored, tetapi tidak diproses/dibalas.
+- Deduplication message ID tetap berjalan.
+- Halaman WhatsApp Bot menampilkan badge Bot ON / Bot OFF.
+
+Cara update:
+1. Backup project dan database.
+2. Extract ZIP dan replace file project sesuai struktur.
+3. Pastikan .env lama tetap dipertahankan.
+4. Login sebagai admin.
+5. Buka Settings -> WhatsApp Bot.
+6. Gunakan tombol Nyalakan Bot / Matikan Bot.
+
+Tidak perlu mengubah konfigurasi Meta Webhook. URL webhook tetap sama.
+
+
+UPDATE V10 - BOT REPLY TEMPLATES
+- Settings -> WhatsApp -> Template Balasan Bot untuk mengedit seluruh pesan teks bot.
+- Template disimpan di app_settings dan dibuat otomatis jika belum ada.
+- Placeholder: {kode}, {nama}, {kategori}, {foto}, {video}, {url}, {filename}, {drive_status}, {error}.
+- Foto tetap dikirim tanpa caption.
+- Tidak perlu mengubah konfigurasi Meta/webhook.

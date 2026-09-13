@@ -1,0 +1,11 @@
+{
+  "require": {
+    "php": "^8.2",
+    "ext-pdo": "*",
+    "ext-curl": "*",
+    "ext-fileinfo": "*",
+    "ext-zip": "*",
+    "google/apiclient": "^2.18",
+    "vlucas/phpdotenv": "^5.6"
+  }
+}
